@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://cd28hdnkt70d5"]
+[gd_scene load_steps=3 format=3 uid="uid://cd28hdnkt70d5"]
+
+[ext_resource type="Script" path="res://PreviewRotate.cs" id="1_vfj0h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tjh12"]
 
 [node name="world" type="Node3D"]
+
+[node name="scene" type="Node" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0112979, 0, 5.29982)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="scene"]
+transform = Transform3D(0.303211, 0.531618, -0.790851, -0.192378, 0.846982, 0.495592, 0.933303, 0.0018737, 0.359086, -0.000873566, 7.11572, -0.00262547)
+light_color = Color(0.231373, 0.301961, 0.823529, 1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39243, 0.135073, 0.984199)
+light_color = Color(1, 0, 0.572549, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48477, -1.13649, 0.968465)
+light_color = Color(0.341176, 0, 1, 1)
+
+[node name="ControlParent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemList" type="ItemList" parent="ControlParent"]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 112.0
+item_count = 6
+max_columns = 2
+same_column_width = true
+item_0/text = "test"
+item_1/text = "test1"
+item_2/text = "t"
+item_3/text = "t"
+item_4/text = "t"
+item_5/text = ""
+
+[node name="gun" type="Node3D" parent="."]
+script = ExtResource("1_vfj0h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="gun"]
+mesh = SubResource("CapsuleMesh_tjh12")
+skeleton = NodePath("")
