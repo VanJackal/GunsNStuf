@@ -5,7 +5,7 @@ public partial class PreviewRotate : Node3D
 {
 	[Export] public int RotationFactor { get; set; } = 200;
 
-	private bool mousePressed = false;
+	private bool _mousePressed = false;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -23,12 +23,12 @@ public partial class PreviewRotate : Node3D
 	}
     public override void _Input(InputEvent @event)
     { 
-		if (@event is InputEventMouseMotion eventMouseMotion && mousePressed) {
+		if (@event is InputEventMouseMotion eventMouseMotion && _mousePressed) {
 			Vector2 deltaMouse = eventMouseMotion.Relative;
 			DoRotate(deltaMouse);
 		} else if (@event is InputEventMouseButton eventMouseButton)
 		{
-			mousePressed = eventMouseButton.Pressed;
+			_mousePressed = eventMouseButton.Pressed;
 		}
     }
 }
