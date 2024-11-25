@@ -4,6 +4,8 @@ using System;
 public partial class PreviewRotate : Node3D
 {
 	[Export] public int RotationFactor { get; set; } = 200;
+
+	private bool mousePressed = false;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -13,19 +15,20 @@ public partial class PreviewRotate : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		//Rotate(new Vector3(0.5f,0.5f,0).Normalized(), (float)delta);
 	}
 
 	private void DoRotate(Vector2 move) {
-		float mag = move.Length();
-		Vector3 axis = Vector3.Back.Cross(new Vector3(move.X, -move.Y, 0)).Normalized();
-		GlobalRotate(axis,mag/RotationFactor);
+		GlobalRotate(Vector3.Up, move.X/RotationFactor);
+		GlobalRotate(Vector3.Right, move.Y/RotationFactor);
 	}
     public override void _Input(InputEvent @event)
-    { //todo add click and drag
-		if (@event is InputEventMouseMotion eventMouseMotion) {
+    { 
+		if (@event is InputEventMouseMotion eventMouseMotion && mousePressed) {
 			Vector2 deltaMouse = eventMouseMotion.Relative;
 			DoRotate(deltaMouse);
+		} else if (@event is InputEventMouseButton eventMouseButton)
+		{
+			mousePressed = eventMouseButton.Pressed;
 		}
     }
 }
