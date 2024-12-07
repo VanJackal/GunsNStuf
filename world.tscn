@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://PreviewRotate.cs" id="1_vfj0h"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_tjh12"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_li062"]
 
 [node name="world" type="Node3D"]
 
@@ -42,12 +42,11 @@ item_1/text = "test1"
 item_2/text = "t"
 item_3/text = "t"
 item_4/text = "t"
-item_5/text = ""
 
 [node name="gun" type="Node3D" parent="." node_paths=PackedStringArray("Camera")]
 script = ExtResource("1_vfj0h")
 Camera = NodePath("../scene/Camera3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="gun"]
-mesh = SubResource("CapsuleMesh_tjh12")
+mesh = SubResource("CapsuleMesh_li062")
 skeleton = NodePath("")
