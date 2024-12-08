@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd28hdnkt70d5"]
+[gd_scene load_steps=4 format=3 uid="uid://cd28hdnkt70d5"]
 
+[ext_resource type="Script" path="res://ModsMenu.cs" id="1_22ljs"]
 [ext_resource type="Script" path="res://PreviewRotate.cs" id="1_vfj0h"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_li062"]
@@ -26,22 +27,133 @@ light_color = Color(0.341176, 0, 1, 1)
 
 [node name="ControlParent" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ItemList" type="ItemList" parent="ControlParent"]
+[node name="Tree" type="Tree" parent="ControlParent" node_paths=PackedStringArray("Tree")]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 112.0
-item_count = 6
-max_columns = 2
-same_column_width = true
-item_0/text = "test"
-item_1/text = "test1"
-item_2/text = "t"
-item_3/text = "t"
-item_4/text = "t"
+offset_right = 203.0
+offset_bottom = 178.0
+script = ExtResource("1_22ljs")
+Tree = NodePath(".")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ControlParent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -227.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ControlParent/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel5" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel6" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel7" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel8" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel9" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel10" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel22" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel23" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel24" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel25" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel11" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel12" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel13" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel14" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel15" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel16" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel17" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel18" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel19" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel20" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Panel21" type="Panel" parent="ControlParent/ScrollContainer/HFlowContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
 
 [node name="gun" type="Node3D" parent="." node_paths=PackedStringArray("Camera")]
 script = ExtResource("1_vfj0h")
