@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://j038txx7qx74"]
+
+[ext_resource type="Script" path="res://UI/ModMenu/ModListItem.cs" id="1_11xri"]
+[ext_resource type="Texture2D" uid="uid://cmpw5awn4scv1" path="res://icon.svg" id="1_61oqc"]
+
+[node name="AttatchmentItem" type="PanelContainer" node_paths=PackedStringArray("Label")]
+clip_contents = true
+offset_right = 280.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_11xri")
+Label = NodePath("DetailsContainer/Label")
+
+[node name="DetailsContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ImageContainer" type="CenterContainer" parent="DetailsContainer"]
+layout_mode = 2
+
+[node name="Image" type="TextureRect" parent="DetailsContainer/ImageContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_61oqc")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="DetailsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "This is an attachment"
+text_overrun_behavior = 3
