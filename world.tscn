@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd28hdnkt70d5"]
+[gd_scene load_steps=6 format=3 uid="uid://cd28hdnkt70d5"]
 
 [ext_resource type="Script" path="res://ModsMenu.cs" id="1_22ljs"]
 [ext_resource type="Script" path="res://PreviewRotate.cs" id="1_vfj0h"]
+[ext_resource type="Script" path="res://UI/ModMenu/ModList.cs" id="2_l26w1"]
 [ext_resource type="PackedScene" uid="uid://j038txx7qx74" path="res://UI/ModMenu/modsListItem.tscn" id="2_p32ps"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_li062"]
@@ -41,7 +42,7 @@ offset_bottom = 178.0
 script = ExtResource("1_22ljs")
 Tree = NodePath(".")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ControlParent"]
+[node name="ModList" type="ScrollContainer" parent="ControlParent" node_paths=PackedStringArray("Container")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -51,94 +52,13 @@ offset_left = -279.0
 grow_horizontal = 0
 grow_vertical = 2
 horizontal_scroll_mode = 0
+script = ExtResource("2_l26w1")
+Container = NodePath("ItemContainer")
+ListItem = ExtResource("2_p32ps")
 
-[node name="HFlowContainer" type="VBoxContainer" parent="ControlParent/ScrollContainer"]
+[node name="ItemContainer" type="VBoxContainer" parent="ControlParent/ModList"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="AttatchmentItem" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem2" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "A VERY LONG MOD NAME LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL"
-
-[node name="AttatchmentItem3" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem4" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem5" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem6" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem7" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem8" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem9" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem10" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem11" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem12" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem13" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem14" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem15" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem16" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem17" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem18" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem19" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem20" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
-
-[node name="AttatchmentItem21" parent="ControlParent/ScrollContainer/HFlowContainer" instance=ExtResource("2_p32ps")]
-layout_mode = 2
-ModName = "ModName"
 
 [node name="gun" type="Node3D" parent="." node_paths=PackedStringArray("Camera")]
 script = ExtResource("1_vfj0h")

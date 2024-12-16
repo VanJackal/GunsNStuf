@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using GunsNStuf.Data.Models;
 
 public partial class ModListItem : PanelContainer
 {
@@ -12,6 +13,11 @@ public partial class ModListItem : PanelContainer
 			_name = value;
 			Label.SetText(value);
 		}
+	}
+
+	public void From(Attachment details)
+	{
+		this.ModName = details.Name;
 	}
 
 	private String _name = String.Empty;
