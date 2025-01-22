@@ -13,10 +13,10 @@ public class Data
     {
         // Initialize Registry
         // todo this should be converted so its reading in from jsons(or some kind of dynamic list from the attachments) for each registry
-        Attachments.Add(new Attachment("mod1"));
-        Attachments.Add(new Attachment("mod2"));
-        Attachments.Add(new Attachment("mod3"));
-        Attachments.Add(new Attachment("mod4"));
+        Attachments.Add(new Attachment("sample","res://Assets/Sprites/icon.svg"));
+        Attachments.Add(new Attachment("flashlight","res://Assets/Sprites/flashlight.png"));
+        Attachments.Add(new Attachment("foregrip","res://Assets/Sprites/Foregrip.png"));
+        Attachments.Add(new Attachment("sight","res://Assets/Sprites/sight.png"));
     }
 
     public static Data GetInstance()

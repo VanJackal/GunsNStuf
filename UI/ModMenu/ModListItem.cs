@@ -17,11 +17,14 @@ public partial class ModListItem : PanelContainer
 
 	public void From(Attachment details)
 	{
-		this.ModName = details.Name;
+		ModName = details.Name;
+		var tex = ResourceLoader.Load(details.Icon) as Texture2D;
+		Icon.Texture = tex;
 	}
 
 	private String _name = String.Empty;
 	[Export] public Label Label;
+	[Export] public TextureRect Icon;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

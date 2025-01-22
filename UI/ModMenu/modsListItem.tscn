@@ -1,15 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://j038txx7qx74"]
 
 [ext_resource type="Script" path="res://UI/ModMenu/ModListItem.cs" id="1_11xri"]
-[ext_resource type="Texture2D" uid="uid://cmpw5awn4scv1" path="res://icon.svg" id="1_61oqc"]
+[ext_resource type="Texture2D" uid="uid://cmpw5awn4scv1" path="res://Assets/Sprites/icon.svg" id="1_61oqc"]
 
-[node name="AttatchmentItem" type="PanelContainer" node_paths=PackedStringArray("Label")]
+[node name="AttatchmentItem" type="PanelContainer" node_paths=PackedStringArray("Label", "Icon")]
 clip_contents = true
 offset_right = 280.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 script = ExtResource("1_11xri")
 Label = NodePath("DetailsContainer/Label")
+Icon = NodePath("DetailsContainer/ImageContainer/Image")
 
 [node name="DetailsContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
